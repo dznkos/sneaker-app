@@ -5,7 +5,6 @@ import { CartItem } from './CartItem'
 
 export const Cart = () => {
 
-
   const { cart, clearCart } = useCart()
 
   const cartCheckboxId = useId()
@@ -18,6 +17,11 @@ export const Cart = () => {
       <input type="checkbox" id={cartCheckboxId} hidden />
 
       <aside className='cart'>
+        <div className='flex justify-between text-white my-2'>
+          <strong>Total: $ { cart.reduce( (total, prod) => total + (prod.price * prod.quantity), 0) } </strong>
+          <button className='p-1 font-bold rounded-md bg-blue-500'>Pagar</button>
+        </div>
+        <hr className='mb-3'/>
         <ul>
           {
             cart.length > 0

@@ -59,7 +59,7 @@ export const cartReducer = (state, action) => {
       return newStateRFC
     case 'CLEAR_CART':
       updateLocalStorage([])
-      return cartInitialState
+      return []
 
     default:
       return state
